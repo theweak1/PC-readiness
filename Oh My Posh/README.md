@@ -20,3 +20,10 @@
 5. Select yes
 6. In the newly created file we are going to add the following line 
    ` oh-my-posh init pwsh | Invoke-Expression ` 
+
+## Creating our own Theme
+
+1. In windows explorer open the following folder path 
+   `C:\Users\{YOUR_USER}\AppData\Local\Programs\oh-my-posh\themes `
+2. Create a new file named `MyOhMyPoshTheme.omp.json`
+3. Paste the content of the the `Theme.json` file in here to that file.
