@@ -7,3 +7,4 @@ choco install brave -y
 choco install googlechrome -y
 choco install keepass.install -y
 choco install spotify -y
+choco install notion -y
