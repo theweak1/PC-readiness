@@ -9,3 +9,5 @@ choco install keepass.install -y
 choco install spotify -y
 choco install notion -y
 choco install heroku-cli -y
+choco install nano -y
+choco install lazygit -y
