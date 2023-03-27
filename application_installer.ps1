@@ -8,3 +8,4 @@ choco install googlechrome -y
 choco install keepass.install -y
 choco install spotify -y
 choco install notion -y
+choco install heroku-cli -y
