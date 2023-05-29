@@ -11,3 +11,6 @@ choco install notion -y
 choco install heroku-cli -y
 choco install nano -y
 choco install lazygit -y
+choco install obs-studio -y
+choco install grep -y
+choco install flow-launcher -y
