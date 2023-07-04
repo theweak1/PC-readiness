@@ -8,3 +8,8 @@
 3. after that we need to enable Predictive IntelliSense
    1. We can do that by using the following script. Again it may very according the version
    `Set-PSReadLineOption -PredictionSource History`
+
+NOTE: if you get the error "Import-Module: The specified module 'Terminal-Icons' was not loaded because no valid module file was found in any module directory."
+
+to the following command
+'Install-Module -Name Terminal-Icons -RequiredVersion 0.9.0'
