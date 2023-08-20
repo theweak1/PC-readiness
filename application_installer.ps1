@@ -1,4 +1,4 @@
-# -- [ This file is used to install all the necessary programs I would need on my windows computer to have my programs and my tools for neovim to function properly. It is intended to get my workspace developer ready with little effort] --
+# -- [ This file is used to install all the necessary programs I would need on my Windows computer to have my programs and my tools for neovim to function properly. It is intended to get my workspace developer ready with little effort] --
 
 # Install Chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
@@ -9,7 +9,7 @@ choco install nodejs -y
 
 
 #install Neovim and tools for It
-choco install neovim
+choco install neovim -y
 
 
 # Install Dev tools
@@ -39,6 +39,8 @@ choco install keepass -y
 choco install notion -y
 choco install flow-launcher -y
 choco install obs-studio -y
+choco install teamviewer -y
 
 # Install Languages
 choco install python3 -y 
+choco install zig -y
