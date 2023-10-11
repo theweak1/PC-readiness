@@ -3,44 +3,66 @@
 # Install Chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-# Installation of Git and Node (First for safety measures)
-choco install git -y
-choco install nodejs -y
+# Define the list of packages to be installed or upgraded
+$packages = @(
+    # Installation of Git and Node (First for safety measures)
+    "git",
+    "nodejs",
 
+    # Install Neovim and tools for It
+    "neovim",
 
-#install Neovim and tools for It
-choco install neovim -y
+    # Install Dev tools
+    "vscode",
+    "notepadplusplus",
+    "lazygit",
 
+    # Install new form of PowerShell
+    "powershell-core",
 
-# Install Dev tools
-choco install vscode -y
-choco install notepadplusplus -y
-choco install lazygit -y
+    # Install programs
+    "heroku-cli",
+    "spotify",
+    "postman",
 
+    # Install command line tools (Linux)
+    "nano",
+    "grep",
 
-# Install programs
-choco install heroku-cli -y
-choco install spotify -y
-choco install postman -y
+    # Install web browsers
+    "brave",
 
-# Install command line tools (linux)
-choco install nano -y
-choco install grep -y
+    # Install password manager
+    "keepass",
 
-# Install web browsers
-choco install brave -y
-choco install googlechrome -y
+    # Install productivity tools
+    "notion",
+    "flow-launcher",
+    "obs-studio",
+    "teamviewer",
 
-# Install password manager
-choco install keepass -y
+    # Install Languages
+    "python3",
+    "zig"
+)
 
+# Get the list of installed packages
+$installedPackages = choco list --local-only | ForEach-Object { ($_ -split ' ')[0] }
 
-#Install productivity tools
-choco install notion -y
-choco install flow-launcher -y
-choco install obs-studio -y
-choco install teamviewer -y
+foreach ($package in $packages) {
+    if ($installedPackages -contains $package) {
+        # If the package is installed, upgrade it
+        Write-Host "Upgrading $package"
+        choco upgrade $package -y
+    } else {
+        # If the package is not installed, install it
+        Write-Host "Installing $package"
+        choco install $package -y
+    }
+}
 
-# Install Languages
-choco install python3 -y 
-choco install zig -y
+# install latest lts version of node
+nvm install lts
+
+#install version 18.17.1
+nvm install 18.17.1
